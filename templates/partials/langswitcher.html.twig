@@ -1,0 +1,12 @@
+<ul class="langswitcher hasLanguageFlag">
+{% for key in langhelper.languages %}
+    {% if key == langhelper.current %}
+        {% set active_class = 'active' %}
+    {% else %}
+        {% set active_class = '' %}
+    {% endif %}
+    <li class="{% if active_class %}active{% endif %}">
+        <a href="{{ langhelper_pageurl(page, key) }}" class="external"><img src="{{ langhelper_flagimg(key) }}" alt="{{  key }}">{{ langhelper_native_name(key)|capitalize }}</a>
+    </li>
+{% endfor %}
+</ul>
