@@ -20,6 +20,27 @@ The `langhelper` plugin doesn't require any configuration. You do however need t
 
 ```
 {% include 'partials/langswitcher.html.twig' %}
+{% include 'partials/langswitcherDropdown.html.twig' %}
+```
+
+Get the active language code
+```
+{{ langhelper_current() }}
+```
+
+Get the native name of a language
+```
+{{ langhelper_native_name('en') }}
+```
+
+Get the page-url for a language
+```
+{{ langhelper_pageurl(page, 'fr') }}
+```
+
+Get the image-url for a language
+```
+{{ langhelper_flagimg('fr') }}
 ```
 
 Something you might want to do is to override the look and feel of the langswitcher, and with Grav it is super easy.
